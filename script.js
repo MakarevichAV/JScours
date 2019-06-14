@@ -19,7 +19,32 @@ let appData = {
 
 console.log(appData);
 
-for (let i = 0; i < 2; i++) {
+// for (let i = 0; i < 2; i++) {
+//     let q1 = prompt("Статья расходов №" + (i + 1) + ") Введите обязательную статью расходов в этом месяце", "");
+//     let q2 = prompt("Статья расходов №" + (i + 1) + ") Во сколько обойдется?", "");
+
+//     if ( typeof(q1) === 'string' && typeof(q1) != null && typeof(q2) != null 
+//         && q1 != '' && q2 != '' && q1.length < 50 ) {
+//         console.log("done");
+//         appData.expenses[q1] = q2;
+//     } else {}
+// };
+
+// let i = 0;
+// while (i < 2) {
+//     let q1 = prompt("Статья расходов №" + (i + 1) + ") Введите обязательную статью расходов в этом месяце", "");
+//     let q2 = prompt("Статья расходов №" + (i + 1) + ") Во сколько обойдется?", "");
+
+//     if ( typeof(q1) === 'string' && typeof(q1) != null && typeof(q2) != null 
+//         && q1 != '' && q2 != '' && q1.length < 50 ) {
+//         console.log("done");
+//         appData.expenses[q1] = q2;
+//     } else {}
+//     i++;
+// };
+
+let i = 0;
+do {
     let q1 = prompt("Статья расходов №" + (i + 1) + ") Введите обязательную статью расходов в этом месяце", "");
     let q2 = prompt("Статья расходов №" + (i + 1) + ") Во сколько обойдется?", "");
 
@@ -27,10 +52,10 @@ for (let i = 0; i < 2; i++) {
         && q1 != '' && q2 != '' && q1.length < 50 ) {
         console.log("done");
         appData.expenses[q1] = q2;
-    } else {
-        i--;
-    }
-};
+    } else {}
+    i++;
+} 
+while (i < 2);
 
 appData.budgetDay = appData.budget / 30;
 alert('Бюджет на один день составит ' + appData.budgetDay);
